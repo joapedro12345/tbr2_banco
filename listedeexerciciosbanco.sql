@@ -112,3 +112,17 @@ DELIMITER ;
 
 CALL sp_AdicionarLivro(22, 'Peppa Pig e os 7 Anões/Branca de neve e o Negão de Máua', 2, 1945, 666, 1);
 SELECT * FROM LIVRO;
+
+-- exercício 8 --
+DELIMITER //
+
+CREATE PROCEDURE EncontrarAutorMaisAntigo()
+BEGIN
+    SELECT nome, Sobrenome
+    FROM Autor
+    WHERE data_nascimento = (SELECT MIN(data_nascimento) FROM Autor);
+END 
+//
+DELIMITER ;
+drop procedure EncontrarAutorMaisAntigo;
+CALL EncontrarAutorMaisAntigo();
