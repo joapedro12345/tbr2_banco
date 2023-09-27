@@ -59,3 +59,15 @@ DELIMITER ;
 DROP PROCEDURE  sp_VerificarLivrosCategoria;
 CALL sp_VerificarLivrosCategoria('Ciência', @ver);
 SELECT @ver as tem_ou_não;
+
+-- exercício 5 --
+DELIMITER //
+CREATE PROCEDURE sp_LivrosAteAno(IN p_lpano INT)
+  BEGIN
+    SELECT Titulo, Ano_Publicacao FROM Livro
+    WHERE Ano_Publicacao <= p_lpano;
+	END
+//
+DELIMITER ;
+CALL sp_LivrosAteAno(2004);
+drop procedure sp_LivrosAteAno;
