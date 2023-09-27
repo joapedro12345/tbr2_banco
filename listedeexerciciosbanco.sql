@@ -126,3 +126,9 @@ END
 DELIMITER ;
 drop procedure EncontrarAutorMaisAntigo;
 CALL EncontrarAutorMaisAntigo();
+
+-- exercício 9 --
+Esse exercício criar um procedimento armazenado chamado "listando autores" 
+que extrai nomes e sobrenomes da tabela "Autor". A instrução DELIMITER é usada para temporariamente mudar o delimitador SQL
+para ';' dentro do procedimento. O procedimento é definido com CREATE PROCEDURE, iniciado com BEGIN, contendo uma consulta SELECT e finalizado com END. Em seguida, DELIMITER é
+restaurado para seu valor padrão. Finalmente, o procedimento é chamado com CALL listando_autores(); para listar os nomes e sobrenomes dos autores da tabela. Isso permite a execução eficiente dessa operação específica no banco de dados.
